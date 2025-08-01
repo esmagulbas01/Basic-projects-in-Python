@@ -1,18 +1,24 @@
 number=int(input("Enter a number: "))
-IsPrime=True
+Prime_Numbers=[]
 if(number<0):
     print("Enter a positive number: ")
 elif(number>0 and number<2):
     print("The smallest prime number is two") 
 else:
-    for i in range(2,int((number**0.5)+1)):
-        if(number % i==0):
-            IsPrime=False
-            break
-    if(IsPrime):
-        print(f"The number entered {number} is  a prime number")
-    else:
-        print(f"The number entered {number} is not a prime number")        
+    Prime_Numbers.append(2)
+    for j in range(3,number+1,2):
+         for i in range(3,int((number**0.5)+1)):
+              if(j % i==0):
+                  break
+         else:
+             Prime_Numbers.append(j)       
+           
+    print(Prime_Numbers)          
+           
+                   
+         
+   
+          
 
 
            
